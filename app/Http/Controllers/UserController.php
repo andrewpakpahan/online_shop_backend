@@ -12,8 +12,7 @@ class UserController extends Controller
     public function index()
     {
         $users = User::all();
-
-        return response()->json($users);
+        return response()->json(['message' => 'Hooray!! Successfully fetched users', 'data' => $users], 200);
     }
 
     public function store(Request $request)
@@ -32,13 +31,13 @@ class UserController extends Controller
 
         return response()->json([
             'message' => 'User created successfully',
-            'user' => $user,
-        ]);
+            'data' => $user,
+        ], 201);
     }
 
     public function show(User $user)
     {
-        return response()->json($user);
+        return response()->json(['message' => 'Successfully fetched user', 'data' => $user], 200);
     }
 
     public function update(Request $request, User $user)
@@ -60,8 +59,8 @@ class UserController extends Controller
 
         return response()->json([
             'message' => 'User updated successfully',
-            'user' => $user,
-        ]);
+            'data' => $user,
+        ], 200);
     }
 
     public function destroy(User $user)
@@ -69,7 +68,7 @@ class UserController extends Controller
         $user->delete();
 
         return response()->json([
-            'message' => 'User deleted successfully',
-        ]);
+            'message' => 'User successfully deleted'
+        ], 200);
     }
 }

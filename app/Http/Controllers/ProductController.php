@@ -10,7 +10,7 @@ class ProductController extends Controller
     public function index()
     {
         $products = Product::all();
-        return response()->json(['message' => 'Hooray!! Successfully fetched products', 'data' => $products], 200);
+        return response()->json(['message' => 'Successfully fetched products', 'data' => $products], 200);
     }
 
     public function store(Request $request)
