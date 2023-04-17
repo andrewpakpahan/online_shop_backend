@@ -19,7 +19,7 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::apiResource('products', ProductController::class);
 
     // Define routes for orders resource controller
-     Route::apiResource('orders', OrderController::class);
+    Route::apiResource('orders', OrderController::class);
 
     // Define routes for user resource controller
     Route::get('/users', [UserController::class, 'index']);
